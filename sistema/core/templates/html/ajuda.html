@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Página de Ajuda</title>
+    <link rel="stylesheet" href="{% static 'css/contato.css' %}">
+    <script src="{% static 'js/ajuda.js' %}"></script>
+    <!--  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'sobre' %}">Sobre</a></li>
+            <li><a href="{% url 'contato' %}">Contato</a></li>
+            <li><a class="active" href="{% url 'ajuda' %}">Ajuda</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="container">
+            <h2>Ajuda & FAQ</h2>
+            <div class="cards-list">
+                <div class="card">
+                    <h3>Como enviar o arquivo Excel?</h3>
+                    <p>Basta clicar em "Escolher arquivo" na página inicial e selecionar o arquivo da turma.</p>
+                </div>
+                <div class="card">
+                    <h3>Quais formatos são aceitos?</h3>
+                    <p>São aceitos arquivos .xlsx e .xls.</p>
+                </div>
+                <div class="card">
+                    <h3>Como inserir notas?</h3>
+                    <p>Preencha os campos do formulário com o nome do aluno, instrumento avaliativo, nota e bimestre/etapa.</p>
+                </div>
+                <div class="card">
+                    <h3>O sistema calcula recuperação?</h3>
+                    <p>Sim, após inserir as notas, o sistema identifica automaticamente os alunos em recuperação, com base no valor fornecido como media.</p>
+                </div>
+                <div class="card">
+                    <h3>Precisa de mais ajuda?</h3>
+                    <p>Entre em contato pela página de <a href="{% url 'contato' %}">Contato</a>.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

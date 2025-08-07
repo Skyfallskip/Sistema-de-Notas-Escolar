@@ -1,15 +1,17 @@
 # Sistema-de-Notas-Escolar
+
 Um sistema web onde é possível enviar um arquivo Excel com a planilha da disciplina da turma. O sistema então irá solicitar o nome do aluno, a etapa ou bimestre e o instrumento avaliativo e inserir esses dados na planilha. Apos isso gera um novo arquivo Excel atualizado ao final.
 
 # Objetivo do Sistema
+
 Facilitar a inserção de notas em planilhas, exibir uma análise da turma e futuramente ser implementado em um sistema escolar completo
 
 
 # Sequência de eventos
 
-- 1°Solicita um arquivo Excel como base;
+- 1° Solicita um arquivo Excel como base;
 
--  2° Escaneia o arquivo para saber as colunas que deve inserir as notas;
+- 2° Escaneia o arquivo para saber as colunas que deve inserir as notas;
   
 - 3° Seleção de qual nota você quer inserir ( I1, I2, Prova, Recuperação );
 

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Página de Contato</title>
+    <link rel="stylesheet" href="{% static 'css/contato.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'sobre' %}">Sobre</a></li>
+            <li><a class="active" href="{% url 'contato' %}">Contato</a></li>
+            <li><a href="{% url 'ajuda' %}">Ajuda</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <div class="cards-list">
+                <div class="card">
+                    <h3>LinkedIn</h3>
+                    <p>
+                        <a href="https://www.linkedin.com/" target="_blank">linkedin.com/seuusuario</a>
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>Instagram</h3>
+                    <p>
+                        <a href="https://www.instagram.com/" target="_blank">@seuusuario</a>
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>Email</h3>
+                    <p>
+                        <a href="mailto:seuemail@dominio.com">seuemail@dominio.com</a>
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>WhatsApp</h3>
+                    <p>
+                        <a href="https://wa.me/5599999999999" target="_blank">(99) 99999-9999</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

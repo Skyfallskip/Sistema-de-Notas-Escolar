@@ -1,35 +1,60 @@
 <!DOCTYPE html>
+<html lang="pt-br">
     {% load static %}
-<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Notas Escolar</title>
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
-    <script src="{% static 'javascript/home.js' %}"></script>
-    <!-- <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon"> -->
-    <title>Sistema de Notas</title>
+    <script src="{% static 'js/home.js' %}"></script>
+    <!--  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="#">Home</a></li>
+            <li><a class="active" href="{% url 'home' %}">Home</a></li>
+            <li><a href=" {% url 'sobre' %}">Sobre</a></li>
+            <li><a href="{% url 'contato' %}">Contato</a></li>
+            <li><a href="{% url 'ajuda' %}">Ajuda</a></li>
         </ul>
     </nav>
-    <div class="Plano-De-Fundo">
-        <h1> Bem-Vindo ao Sistema de Notas</h1>
-        <p>Neste sistema é possivel inserir notas de alunos em um arquivo excel de forma rapida e facil!</p>
-    </div>
-
     <main>
         <div class="container">
-            <div class="card">
-                <h2>Como funciona?</h2>
-                <p>Este sistema permite que você insira notas de alunos em um arquivo Excel de maneira rápida e fácil. Basta fornecer um arquivo base e o sistema irá o escanear para saber onde inserir as notas. Ou caso prefira, é possivel gerar um diario de notas do zero.</p>
-            </div>
+            <h2>Inserir Dados na Planilha</h2>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label for="excel_base">Arquivo Excel da Turma:</label>
+                <input type="file" id="excel_base" name="excel_base" accept=".xlsx,.xls" required>
+                <hr>
+                <div id="colunas_detectadas">
+                </div>
+                <hr>
+                <label for="instrumento">Instrumento Avaliativo:</label>
+                <select id="instrumento" name="instrumento" required>
+                    <option value="">Selecione</option>
+                    <option value="I1">I1</option>
+                    <option value="I2">I2</option>
+                    <option value="Prova">Prova</option>
+                    <option value="Recuperação">Recuperação</option>
+                </select>
+                <hr>
+                <label for="nome_aluno">Nome do Aluno:</label>
+                <input type="text" id="nome_aluno" name="nome_aluno" autocomplete="off" required placeholder="Digite o nome do aluno">
+                <label for="nota">Nota:</label>
+                <input type="number" id="nota" name="nota" step="0.01" min="0" max="10" required placeholder="Ex: 8.5">
+                <label for="bimestre">Bimestre/Etapa:</label>
+                <select id="bimestre" name="bimestre" required>
+                    <option value="">Selecione</option>
+                    <option value="1">1º Bimestre</option>
+                    <option value="2">2º Bimestre</option>
+                    <option value="3">3º Bimestre</option>
+                    <option value="4">4º Bimestre</option>
+                    <option value="Etapa 1">Etapa 1</option>
+                    <option value="Etapa 2">Etapa 2</option>
+                </select>
+                <hr>
+                <button type="submit" class="btn">Inserir Nota</button>
+            </form>
         </div>
-        
     </main>
-
-    <footer> Feito por Mateus T. Lirio </footer>
 </body>
 </html>

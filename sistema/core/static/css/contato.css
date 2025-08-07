@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #222831;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #DFD0B8;
+    min-height: 100vh;
+}
+
+nav {
+    background-color: #393E46;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(34, 40, 49, 0.08);
+    border-bottom: 2px solid #948979;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    color: #DFD0B8;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.12rem;
+    padding: 10px 22px;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    position: relative;
+    letter-spacing: 1px;
+}
+
+nav a:hover,
+nav a.active {
+    background: #948979;
+    color: #222831;
+    box-shadow: 0 2px 8px rgba(148, 137, 121, 0.18);
+}
+
+nav a.active::after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 60%;
+    background: #DFD0B8;
+    border-radius: 2px;
+    position: absolute;
+    left: 20%;
+    bottom: 4px;
+}
+
+.container {
+    max-width: 700px;
+    margin: 48px auto;
+    padding: 32px;
+    background: #393E46;
+    border-radius: 16px;
+    box-shadow: 0 6px 32px rgba(34, 40, 49, 0.18);
+}
+
+h2 {
+    color: #948979;
+    margin-bottom: 32px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.cards-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+}
+
+.card {
+    background: #222831;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(34, 40, 49, 0.10);
+    padding: 24px 18px;
+    width: 220px;
+    color: #DFD0B8;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid #948979;
+    transition: box-shadow 0.2s;
+}
+
+.card h3 {
+    color: #948979;
+    margin-bottom: 8px;
+}
+
+.card a {
+    color: #DFD0B8;
+    text-decoration: underline;
+    word-break: break-all;
+    transition: color 0.2s;
+}
+
+.card a:hover {
+    color: #948979;
+}
+
+@media (max-width: 800px) {
+    .container {
+        padding: 16px;
+    }
+    .cards-list {
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+    }
+    .card {
+        width: 100%;
+        max-width: 320px;
+    }
+}

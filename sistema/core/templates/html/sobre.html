@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+    {% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/sobre.css' %}">
+    <script src="{% static 'javascript/sobre.js' %}"></script>
+    <!-- <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon"> -->
+    <title>Sobre</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a class="active" href=" {% url 'sobre' %}">Sobre</a></li>
+            <li><a href="{% url 'contato' %}">Contato</a></li>
+            <li><a href="{% url 'ajuda' %}">Ajuda</a></li>
+        </ul>
+    </nav>
+    <div class="Plano-De-Fundo">
+        <h1> Nesta pagina estão algumas informações sobre o projeto </h1>
+    </div>
+
+    <main>
+        <div class="container">
+            <h2>Sequência de eventos</h2>
+            <div class="cards-list">
+                <div class="card">
+                    <h3>1° Solicita um arquivo Excel como base</h3>
+                    <p>Selecione o arquivo da disciplina/turma para iniciar.</p>
+                </div>
+                <div class="card">
+                    <h3>2° Escaneia o arquivo</h3>
+                    <p>O sistema identifica as colunas onde as notas devem ser inseridas.</p>
+                </div>
+                <div class="card">
+                    <h3>3° Seleção da nota</h3>
+                    <p>Escolha qual nota deseja inserir (I1, I2, Prova, Recuperação).</p>
+                </div>
+                <div class="card">
+                    <h3>4° Inserção dos dados</h3>
+                    <ul>
+                        <li>Nome do aluno (auto completar)</li>
+                        <li>Instrumento avaliativo (I1, I2...)</li>
+                        <li>Nota</li>
+                        <li>Bimestre ou etapa</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>5° Recuperação automática</h3>
+                    <p>O sistema calcula automaticamente os alunos que estão de recuperação.</p>
+                </div>
+                <div class="card">
+                    <h3>6° Análise da turma</h3>
+                    <p>Calcula média, aprovados e reprovados.</p>
+                </div>
+                <div class="card">
+                    <h3>7° Gráfico geral</h3>
+                    <p>Gera gráficos com informações das matérias, recuperações e médias.</p>
+                </div>
+            </div>
+            
+            <div class="tools-section">
+                <h2>Ferramentas Utilizadas</h2>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Python (Django, Pandas, Pygraph)</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer> Feito por Mateus T. Lirio </footer>
+</body>
+</html>
