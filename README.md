@@ -1,31 +1,26 @@
 # Sistema-de-Notas-Escolar
 
-Um sistema web onde é possível enviar um arquivo Excel com a planilha da disciplina da turma. O sistema então irá solicitar o nome do aluno, a etapa ou bimestre e o instrumento avaliativo e inserir esses dados na planilha. Apos isso gera um novo arquivo Excel atualizado ao final.
+Um sistema web onde é possível selecionar modelos de arquivos excel para a turma. O sistema então ira solicitar a quantidade de alunos que tem na turma, e então, popular a planilha de acordo com as informações inseridas.
 
 # Objetivo do Sistema
 
-Facilitar a inserção de notas em planilhas, exibir uma análise da turma e futuramente ser implementado em um sistema escolar completo
+Permitir a crição de planilhas de turmas de maneira mais pratica e rapida.
 
+Futuramente tambem haverá a opção de editar planilhas, podendo ir inserindo notas e alterando notas.
 
 # Sequência de eventos
 
-- 1° Solicita um arquivo Excel como base;
+- 1° O usuario seleciona um modelo de planilha dentre os modelos fornecidos;
 
-- 2° Escaneia o arquivo para saber as colunas que deve inserir as notas;
-  
-- 3° Seleção de qual nota você quer inserir ( I1, I2, Prova, Recuperação );
+- 2° Sistema inicializa a planilha;
 
-- 4° Insere os dados por meio de um formulário com os campos:
-Nome aluno ( mecanismo de auto completar );
-Instrumento avaliativo ( I1, I2...);
-Nota;
-Bimestre ou etapa;
+- 3° O sistema solicita a quantidade de alunos que há nessa turma e se deseja colocar um nome na planilha;
 
-- 5° Sistema calcula automaticamente os alunos que estão de recuperação;
-  
-- 6° Sistema calcula automaticamente media da turma, aprovados e reprovados;
-  
-- 7° Sistema gera um gráfico geral da turma, onde é possível ver as todas as matérias e suas informações (quantidade de recuperações, média da matéria, etc);
+- 4° O sistema popula a planilha inserindo os dados ( Nome, e notas do aluno ).
+
+- 5° O sistema repete o ciclo ate que todos os alunos estejam com nome e as notas.
+
+- 6° O sistema disponibiliza o arquivo para download.
 
 # Ferramentas Utilizadas
 
@@ -35,4 +30,3 @@ Bimestre ou etapa;
 - Python
   Django;
   Pandas;
-  Pygraph;
